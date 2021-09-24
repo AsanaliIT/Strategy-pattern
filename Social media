@@ -1,0 +1,46 @@
+public interface SocialMedia 
+{
+    public void connectTo(String friendName);
+}
+
+
+public class SocialMediaContext 
+{
+    SocialMedia smStrategy;
+ 
+    public void setSocialmediaStrategy(SocialMedia smStrategy) 
+    {
+        this.smStrategy = smStrategy;
+    }
+ 
+    public void connect(String name) 
+    {
+        smStrategy.connectTo(name);
+    }
+}
+
+public class InstagramStrategy implements SocialMedia{
+ 
+    public void connectTo(String friendName) 
+    {
+        System.out.println("Connecting with " + friendName + " through Instagram");
+    }
+}
+
+
+public class VkStrategy implements SocialMedia{
+ 
+    public void connectTo(String friendName) 
+    {
+        System.out.println("Connecting with " + friendName + " through Vk");
+    }
+}
+
+
+public class TelegramStrategy implements SocialMedia {
+ 
+    public void connectTo(String friendName) 
+    {
+        System.out.println("Connecting with " + friendName + " through Telegram [not possible though :)]");
+    }
+}
